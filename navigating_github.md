@@ -9,3 +9,6 @@ https://github.com/harpercheng91/STAT545-participation
 
 The URL to your user account page:
 https://github.com/harpercheng91
+
+First assignment:
+https://github.com/STAT545-UBC/Classroom/blob/a273248a88141de1073052ccf1747d65a6e6eb50/assignments/hw01/hw01.html
