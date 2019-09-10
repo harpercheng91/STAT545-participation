@@ -1,7 +1,9 @@
-Here is the URL to the STAT545 homepage repo:
-https://github.com/STAT545-UBC/STAT545-home
+# HELPFUL LINKS
 
-Here is its corresponding account:
+Here is the URL to the **STAT545 homepage** repo:
+[STAT545 Home](https://github.com/STAT545-UBC/STAT545-home)
+
+Here is its corresponding _organization_ account:
 https://github.com/STAT545-UBC
 
 The URL to my participation repo:
