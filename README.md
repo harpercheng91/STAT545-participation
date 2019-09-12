@@ -1,1 +1,2 @@
-# STAT545 participation
+# STAT 545 participation
+
