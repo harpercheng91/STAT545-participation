@@ -69,9 +69,9 @@ select(gapminder, continent, everything())
 
 ```{r}
 # compare
-select(gapminder, FILL_THIS_IN)
+select(gapminder, cont=continent, everything())
 
-rename(gapminder, FILL_THIS_IN)
+rename(gapminder, cont=continent)
 ```
 
 
@@ -80,19 +80,19 @@ rename(gapminder, FILL_THIS_IN)
 1. Order by year.
 
 ```{r}
-arrange(gapminder, FILL_THIS_IN)
+arrange(gapminder, year)
 ```
 
 2. Order by year, in descending order.
 
 ```{r}
-arrange(gapminder, FILL_THIS_IN)
+arrange(gapminder, desc(year))
 ```
 
 3. Order by year, then by life expectancy.
 
 ```{r}
-arrange(gapminder, FILL_THIS_IN, FILL_THIS_IN)
+arrange(gapminder, year, lifeExp)
 ```
 
 ## Piping, `%>%` (8 min)
@@ -115,7 +115,14 @@ Now using with pipes:
 ```{r}
 # alter the below to include 2 "pipes"
 arrange(select(gapminder, year, lifeExp, country), year, lifeExp)
+
+gapminder %>%
+  select(year, lifeExp, country) %>%
+  arrange(year, lifeExp)
+
+# cmd+shift+m gives you the pipe
 ```
+
 
 # Resume lecture 
 
@@ -127,21 +134,30 @@ Return to guide at section 6.7.
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop>10^8)
 ```
 
 2. Your turn: of those rows filtered from step 1., only take data from Asia.
 
 ```{r}
+gapminder %>% 
+  filter(pop<10^8,
+         continent == 'Asia')
+
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop>10^8) %>% 
+  filter(continent=='Asia')
+
+gapminder %>%
+  filter(pop>10^8 & continent=='Asia')
 ```
 
 3. Repeat 2, but take data from countries Brazil, and China. 
 
 ```{r}
-gapminder %>%
-  filter(FILL_THIS_IN)
+gapminder %>% 
+  filter(pop > 10^8,
+         country=='Brazil' | country=='China')
 ```
 
 ## `mutate()` (10 min)
@@ -153,16 +169,16 @@ Let's get:
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(gdpBill = (gdpPercap*pop/10^9) %>% round(2))
 ```
 
 Notice the backwards compatibility! No need for loops!
 
-Try the same thing, but with `transmute` (drops all other variables). 
+Try the same thing, but with `transmute` (drops all OTHER variables)--> mutate and select
 
 ```{r}
 gapminder %>%
-  transmute(FILL_THIS_IN)
+  transmute(gdpBill = gdpPercap*pop/10^9)
 ```
 
 The `if_else` function is useful for changing certain elements in a data frame.
@@ -171,12 +187,14 @@ Example: Suppose Canada's 1952 life expectancy was mistakenly entered as 68.8 in
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(lifeExp = if_else(country=='Canada' & year==1952, 70, lifeExp))
 ```
 
 Your turn: Make a new column called `cc` that pastes the country name followed by the continent, separated by a comma. (Hint: use the `paste` function with the `sep=", "` argument).
 
 ```{r}
+gapminder %>% 
+  mutate(cc=paste(country, continent, sep=','))
 ```
 
 These functions we've seen are called __vectorized functions__.
