@@ -48,7 +48,7 @@ select(gapminder, year, lifeExp, country)
 select(gapminder, country, continent, year, lifeExp)
 
 # Better way:
-select(gapminder, couontry:lifeExp)
+select(gapminder, country:lifeExp)
 ```
 
 
@@ -120,7 +120,7 @@ gapminder %>%
   select(year, lifeExp, country) %>%
   arrange(year, lifeExp)
 
-# cmd+shift+m gives you the pipe
+# cmd+shift+m gives you the pipe operator
 ```
 
 
