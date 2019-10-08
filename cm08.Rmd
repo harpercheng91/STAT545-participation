@@ -1,0 +1,48 @@
+---
+title: "cm08"
+author: "Harper Cheng"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+ggplot(gapminder, aes(x = lifeExp)) +
+  geom_histogram(aes(y=..density..), bins = 50)
+```
+
+```{r}
+ggplot(gapminder, aes(lifeExp)) +
+  geom_density()
+```
+
+```{r}
+ggplot(gapminder, aes(continent, lifeExp)) +
+  geom_jitter(alpha=0.4)
+```
+
+```{r}
+ggplot(gapminder, aes(continent, lifeExp)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(gapminder, aes(lifeExp, continent)) +
+  ggridges::geom_density_ridges()
+```
+
+```{r}
+ggplot(mtcars, aes(cyl)) +
+  geom_bar()
+```
+
+
+
+
+
+
+
+

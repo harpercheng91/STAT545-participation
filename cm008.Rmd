@@ -133,12 +133,13 @@ tribble(
 
 Fix the plot so that you can actually see the data points. Be sure to solve the problem of overlapping text, without rotating the text.
 
-```{r, fig.width = 5, fig.height = 2}
+```{r, fig.width = 5, fig.height = 5}
 gapminder %>% 
   filter(continent == "Americas") %>% 
   ggplot(aes(country, lifeExp)) + 
   geom_point() +
   geom_boxplot()
+
 ```
 
 ### 5(b) Ridgeplots
@@ -151,6 +152,12 @@ gapminder %>%
   ggplot(aes(country, lifeExp)) + 
   geom_point() +
   geom_boxplot()
+
+
+gapminder %>% 
+  filter(continent == "Americas") %>% 
+  ggplot(aes(lifeExp, country)) + 
+  ggridges::geom_density_ridges()
 ```
 
 ## Exercise 6: Bar plot madness
