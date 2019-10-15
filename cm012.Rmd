@@ -204,6 +204,11 @@ ggplot(gap, aes(x = year, y = lifeExp,
                   color = country)) +
   geom_line() +
   labs(color = "country")
+
+gap %>% 
+  ggplot(aes(x=year, y=lifeExp, color=fct_reorder2(country, year, lifeExp))) +
+  geom_line() + 
+  labs(color="country")
 ```
 
 ## Change order of the levels manually
