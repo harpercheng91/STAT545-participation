@@ -33,9 +33,8 @@ knitr::opts_chunk$set(error = TRUE, warning = FALSE)
 
 After fixing the error, fix the overlapping problem in the following plot (attribution: ["R for data science"](https://r4ds.had.co.nz/data-visualisation.html)).
 
-```
-## Original code:
-ggplot(mpg, aes(cty, hwy)) %>% 
+```{r}
+ggplot(mpg, aes(cty, hwy)) +
   geom_point()
 ```
 
@@ -51,19 +50,18 @@ ggplot(mpg, aes(cty, hwy)) +
 
 Fix this plot so that it shows life expectancy over time _for each country_. Notice that `ggplot2` ignores the grouping of a tibble!
 
-```
-## Original code:
+```{r}
 gapminder %>% 
   group_by(country) %>% 
-  ggplot(aes(year, lifeExp)) +
+  ggplot(aes(year, lifeExp, group=country)) +
   geom_line()
 ```
 
-```{r, fig.width = 5, fig.height = 2}
+```{r}
 gapminder %>% 
-  ggplot(aes(year, lifeExp, group = country, colour = country == "Rwanda")) +
-  geom_line(alpha = 1/3) +
-  scale_colour_discrete("", labels = c("Other", "Rwanda"))
+  ggplot(aes(year, lifeExp, group=country, colour=country=="Rwanda")) +
+  geom_line() +
+  scale_colour_discrete(labels = c("Other", "Rwanda"))
 ```
 
 
@@ -81,11 +79,11 @@ ggplot(gapminder, aes(gdpPercap, lifeExp)) +
   scale_x_log10()
 ```
 
-```{r, fig.width = 5, fig.height = 2}
-ggplot(gapminder, aes(gdpPercap, lifeExp)) +
-  geom_point(alpha = 0.2) +
-  scale_x_log10(labels = scales::comma_format()) +
-  facet_wrap(~ continent, scales = "free_y")
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp, color=continent)) +
+  geom_point(alpha=0.4) +
+  scale_x_log10(labels=scales::comma_format()) +
+  facet_wrap(~continent, scales="free_y")
 ```
 
 ### 3(b) Bubble Plot
@@ -105,15 +103,15 @@ gapminder %>%
   scale_x_log10(labels = scales::comma_format())
 ```
 
-```{r, fig.width = 8, fig.height = 2}
+```{r}
 gapminder %>% 
-  filter(continent != "Oceania") %>% 
-  ggplot(aes(gdpPercap, lifeExp, size = pop, fill = continent)) +
-  facet_wrap(~ continent, nrow = 1) +
-  geom_point(alpha = 0.5, shape = 21) +
-  scale_x_log10(labels = scales::comma_format()) +
+  filter(continent!="Oceania") %>% 
+  ggplot(aes(gdpPercap, lifeExp, size=pop, fill=continent)) +
+  facet_wrap(~continent) +
+  geom_point(alpha=0.8, shape=21) +
+  scale_x_log10(labels=scales::comma_format()) +
   scale_size_area() +
-  scale_fill_discrete(guide = FALSE)
+  scale_fill_discrete()
 ```
 
 A list of shapes can be found [at the bottom of the `scale_shape` documentation](https://ggplot2.tidyverse.org/reference/scale_shape.html).
@@ -130,10 +128,10 @@ ggplot(gapminder) +
 ```
 
 
-```{r, fig.width = 5, fig.height = 2}
+```{r}
 ggplot(gapminder) +
-  geom_point(aes(gdpPercap, lifeExp), size = 0.1) +
-  scale_x_log10(labels = scales::dollar_format())
+  geom_point(aes(gdpPercap, lifeExp), size=0.8, alpha=0.4) +
+  scale_x_log10(labels=scales::dollar_format())
 ```
 
 
@@ -190,10 +188,10 @@ gapminder %>%
 
 ```{r, fig.width = 5, fig.height = 5}
 gapminder %>% 
-  filter(continent == "Americas") %>% 
+  filter(continent=="Americas") %>% 
   ggplot(aes(country, lifeExp)) + 
-  geom_boxplot(outlier.alpha = 0) +
-  geom_jitter(alpha = 0.25, height = 0.2) +
+  geom_boxplot(outlier.alpha=0) +
+  geom_jitter(alpha=0.25, height=0.2) +
   coord_flip()
 ```
 
@@ -212,10 +210,11 @@ gapminder %>%
 
 ```{r, fig.width = 5, fig.height = 5}
 gapminder %>% 
-	filter(continent == "Americas") %>% 
+	filter(continent=="Americas") %>% 
 	ggplot(aes(lifeExp, country)) + 
 	ggridges::geom_density_ridges()
 	# ggridges::geom_rug(aes(group = country))
+
 gapminder %>% 
   filter(continent == "Americas") %>% 
   mutate(country = fct_reorder(country, lifeExp, median)) %>% # More on this line later
@@ -242,10 +241,10 @@ mtcars %>%
 
 ```{r, fig.width = 5, fig.height = 2}
 mtcars %>% 
-  mutate(transmission = if_else(am == 0, "automatic", "manual")) %>% 
+  mutate(transmission=if_else(am==0, "automatic", "manual")) %>% 
   ggplot(aes(cyl, ..prop..)) +
-  geom_bar(aes(fill = transmission), position = "dodge") +
-  scale_x_continuous(breaks = c(4, 6, 8)) # Or change cyl to factor(cyl)
+  geom_bar(aes(fill=transmission), position="dodge") +
+  scale_x_continuous(breaks=c(4, 6, 8)) # Or change cyl to factor(cyl)
 ```
 
 ### 6(b) Bar heights already calculated
@@ -289,7 +288,7 @@ ggplot(hair_eye, aes(Hair, Eye)) +
 
 ```{r, fig.width = 5, fig.height = 2}
 ggplot(hair_eye, aes(Hair, Eye)) +
-  geom_tile(aes(fill = n))
+  geom_tile(aes(fill=n))
 ```
 
 By the way, `geom_count()` is like `geom_bar()`: it counts the number of overlapping points.
