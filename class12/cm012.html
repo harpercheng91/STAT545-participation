@@ -310,6 +310,11 @@ ggplot(gap, aes(x = year, y = lifeExp,
   geom_line() +
   labs(color = &quot;country&quot;)</code></pre>
 <pre><code>## Error in ggplot(gap, aes(x = year, y = lifeExp, color = country)): could not find function &quot;ggplot&quot;</code></pre>
+<pre class="r"><code>gap %&gt;% 
+  ggplot(aes(x=year, y=lifeExp, color=fct_reorder2(country, year, lifeExp))) +
+  geom_line() + 
+  labs(color=&quot;country&quot;)</code></pre>
+<pre><code>## Error in gap %&gt;% ggplot(aes(x = year, y = lifeExp, color = fct_reorder2(country, : could not find function &quot;%&gt;%&quot;</code></pre>
 </div>
 <div id="change-order-of-the-levels-manually" class="section level2">
 <h2>Change order of the levels manually</h2>
