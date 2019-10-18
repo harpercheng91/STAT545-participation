@@ -8,15 +8,15 @@
 
 ### Class Meeting 3 Authoring
 - Populate [navigating_github.md](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.md) document with some markdown features.
-- Convert the `.md` file into both [pdf](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.pdf) and [html](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.html) (you can find the rendered version [here](https://harpercheng91.github.io/STAT545-participation/weeks1&2/navigating_github.html)).
-- Upload [rmd_exploration.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/Rmd%20exploration.Rmd) and its output formats ([md](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/rmd_exploration.md), and [html](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/Rmd_exploration.html) or the [rendered version](https://harpercheng91.github.io/STAT545-participation/weeks1&2/Rmd_exploration.html)).
+- Convert the `.md` file into both [pdf](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.pdf) and [html](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.html) (you can find the rendered version [here](https://harpercheng91.github.io/STAT545-participation/weeks1%262/navigating_github.html)).
+- Upload [rmd_exploration.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/rmd_exploration.Rmd) and its output formats ([md](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/rmd_exploration.md), and [html](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/Rmd_exploration.html) or the [rendered version](https://harpercheng91.github.io/STAT545-participation/weeks1&2/Rmd_exploration.html)).
 - Upload [rmd_exploration-slides.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/rmd%20exploration%20slides.Rmd) and [html](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/rmd_exploration_slides.html) formats. Or the [rendered html](https://harpercheng91.github.io/STAT545-participation/weeks1&2/rmd_exploration_slides.html).
 
 ### Class Meeting 4 The version control workflow
 - nothing is required for submisison.
 
 ### Class Meeting 5 Intro to plotting with ggplot2, Part I
-- Complete cm005-ggplot_intro.Rmd worksheet. Submit [.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/week5/cm005-exercise.rmd) file along with knitted [html](https://harpercheng91.github.io/STAT545-participation/class5/cm005-exercise.html).
+- Complete cm005-ggplot_intro.Rmd worksheet. Submit [.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/class5/cm005-exercise.rmd) file along with knitted [html](https://harpercheng91.github.io/STAT545-participation/class5/cm005-exercise.html).
 
 ### Class Meeting 6 Intro to data wrangling, Part I
 - Complete cm006-dplyr_exercise.Rmd worksheet. Submit [.Rmd](https://github.com/harpercheng91/STAT545-participation/blob/master/class6/cm006.Rmd) file along with knitted and rendered [html](https://harpercheng91.github.io/STAT545-participation/class6/cm006.html).
