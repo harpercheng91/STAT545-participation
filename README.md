@@ -1,5 +1,11 @@
 # STAT 545 participation
 
+*In this repository, you will find in class activities for STAT545. Below are the links to each exercise.*
+
+| CLASS | 1-3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| FOLDER | [weeks1&2](https://github.com/harpercheng91/STAT545-participation/tree/master/weeks1%262)| N.A | [class5](https://github.com/harpercheng91/STAT545-participation/tree/master/class5)|[class6](https://github.com/harpercheng91/STAT545-participation/tree/master/class6)|[class7](https://github.com/harpercheng91/STAT545-participation/tree/master/class7)|[class8](https://github.com/harpercheng91/STAT545-participation/tree/master/class8)|[class9](https://github.com/harpercheng91/STAT545-participation/tree/master/class9)|[class10](https://github.com/harpercheng91/STAT545-participation/tree/master/class10)|[class11](https://github.com/harpercheng91/STAT545-participation/tree/master/class11)|[class12](https://github.com/harpercheng91/STAT545-participation/tree/master/class12)|[class13](https://github.com/harpercheng91/STAT545-participation/tree/master/class13)|[class14](https://github.com/harpercheng91/STAT545-participation/tree/master/class14)|
+
 ### Class Meeting 1 Introduction to STAT 545 and GitHub
 - Create and populate [navigating_github.md](https://github.com/harpercheng91/STAT545-participation/blob/master/weeks1%262/navigating_github.md) with several links.
   
